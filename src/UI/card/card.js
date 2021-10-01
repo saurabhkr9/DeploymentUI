@@ -1,12 +1,14 @@
 import './card.scss';
 const Card = (props) => {
-
-    return <div className="cardContainer">
+     
+    return <>
+    <div className="cardContainer" onClick={props.onClick} >
              <div className="cardContent">
-             <h1>{props.title}</h1>
-              <h3>{props.description}</h3>
-        </div>
-  </div>
+                  <h2>{props.title}</h2>
+             </div>
+       </div>
+       {/* <h3>{props.description}</h3> */}
+</>
 }
 
 export default Card;

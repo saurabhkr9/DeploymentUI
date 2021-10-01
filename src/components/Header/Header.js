@@ -30,8 +30,8 @@ const HeaderNavigationProps = {
     navigationsVisible: 3,
     navigations: [
         {
-            title: "MailVerse",
-            link: "https://gd.mail.ibm.com"
+            title: "Home",
+            link: "/home"
         },
     ]
 }
@@ -85,6 +85,16 @@ const GlobalHeaderContainer = () => {
                    <SwitcherItem onClick={(e)=>{alert('compoennt1_click')}} isSelected aria-label="Link 1" href="#">
                    User Name
                    </SwitcherItem>
+                   <SwitcherDivider />
+                   <SwitcherItem href="#" aria-label="Link 6">
+                  My Tasks
+                   </SwitcherItem>
+                   <SwitcherItem href="#" aria-label="Link 6">
+                  Reporting
+              </SwitcherItem>
+              <SwitcherItem href="#" aria-label="Link 6">
+                  Goals
+              </SwitcherItem>
               <SwitcherDivider />
               <SwitcherItem href="#" aria-label="Link 6">
                   Logout

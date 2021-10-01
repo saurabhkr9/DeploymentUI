@@ -8,6 +8,7 @@ import Fade from './assets/Animations/FadeAnimation';
 import { ProtectedRoute } from './assets/ProtectedRoute';
 import PageNotFound from './pages/PageNotFound';
 import HomePage from './pages/Home';
+import Dashboard from './pages/Dashboard'
 import IdleTimeout from './assets/IdleTimeout';
 import {fetchTaskData, sendTaskData } from './redux/actions/taskActions'
 
@@ -19,11 +20,8 @@ let isInitial = true;
     const dispatch = useDispatch();
     const tasks = useSelector(state => state.task.tasks)
 
-    console.log("app"+tasks);
-
    useEffect(()=>{
     if(isInitial){
-      console.log("fetch called")
       dispatch(fetchTaskData());
       isInitial = false;
       return;
@@ -42,6 +40,7 @@ let isInitial = true;
                 <Switch basename={props.basename}>
                     <Route exact path="/login" component={LoginPage} />  
                     <Route exact path="/home" component={HomePage} />
+                    <Route exact path="/dashboard" component={Dashboard} />
                     <Route exact path="*" component={PageNotFound} />  
                 </Switch>
             </Fade>  
