@@ -10,3 +10,17 @@
 
 // Use the gray 100 theme
 @include carbon--theme($carbon--theme--g100);
+
+//Note: The feature flag needs to come before the Carbon styles.scss import.
+$feature-flags: (
+  grid-columns-16: true,
+);
+
+#app-header,#app-footer{
+  position: fixed;
+  z-index: 3;
+}
+
+$feature-flags: (
+  grid-columns-16: true,
+);

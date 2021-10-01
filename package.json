@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@carbon/grid": "10.17.0",
     "@carbon/icons-react": "10.22.0",
     "@carbon/layout": "^10.32.0",
     "@carbon/motion": "^10.24.0",
@@ -21,10 +22,13 @@
     "history": "^5.0.1",
     "http-proxy-middleware": "^2.0.1",
     "jquery": "^3.6.0",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-cookie": "^4.1.1",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.5",
+    "react-router": "^5.2.1",
+    "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0",
@@ -34,12 +38,16 @@
     "validator": "^13.6.0",
     "web-vitals": "^1.1.2"
   },
+  "browser": {
+    "crypto": false
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "https://identitytoolkit.googleapis.com/",
   "eslintConfig": {
     "extends": [
       "react-app",

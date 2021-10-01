@@ -1,0 +1,57 @@
+import React, { useState } from 'react';
+import './LoginPage.scss'
+import { Link } from 'carbon-components-react';
+import login_banner from './resources/images/login_banner.png'
+import LoginForm from './LoginForm';
+import SignUpForm from './SignUpForm'
+import { ConfirmModal } from '../../components/ModalBox';
+export default function LoginPage(props) {
+  
+
+  const section = {
+    about: {
+      title: 'Log in to Do Deployment UI',
+      body: 'This UI has been designed to provide SC&T teams to tag the Clients.It Provides the Client Tag maintenance for all Client Level. Also, Provide capability to have Client Tagging for Preview data.Provide GUI to perform Client Tagging for Preview and all Client Levels viz Global Buying Group, Buying Group, Global Clients or Domestic Clients'
+    },
+    additional_links: {
+      accessHub: 'https://ibm.idaccesshub.com/ECMv6/request/requestHome',
+      help: 'https://www.ibm.com/ibmid/myibm/help/us/helpdesk.html'
+    },
+    accessHubModal: {
+
+      modalTitlePrimary: 'DO Deployment Ui AccessHub',
+      primaryAction:'Request Access',
+      modalTitleSecondary: 'This request will be submitted to the admin approval',
+      modalBody: <div style={{ marginTop: '2rem' }}>
+       <SignUpForm />
+      </div>,
+      modalAction: () => { console.log('submitted')}
+    }
+  }
+
+  
+  const [accessHubModal,showAccessHubModal]=useState(false)
+
+  return (
+
+    <div className="login-pg-container">
+      <div className="banner-container"><img className="banner-css" alt="login float banner" src={login_banner} /></div>
+      <div className="login-form-container">
+            <LoginForm />
+        <div className="signup-user-div">
+          <Link href="" onClick={(e)=>{showAccessHubModal(true);e.preventDefault()}}>Need Access? Request Here</Link>
+          <ConfirmModal open={accessHubModal} setOpen={showAccessHubModal} {...section.accessHubModal} />
+        </div >
+      </div >
+      <div className="about-container">
+        <span className="about-header">
+          {section.about.title}
+        </span>
+        <hr style={{ width: '95%', justifyContent: 'center' }} />
+        <span className="about-content">
+          {section.about.body}
+        </span>
+      </div>
+    </div >
+  );
+}

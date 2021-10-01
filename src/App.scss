@@ -1,0 +1,33 @@
+@import 'carbon-components/scss/globals/scss/vendor/@carbon/type/scss/font-family.scss';
+@import 'carbon-components/scss/globals/scss/vendor/@carbon/layout/scss/breakpoint.scss';
+@import 'carbon-components/scss/globals/scss/typography.scss';
+@import 'carbon-components/scss/globals/scss/vars.scss';
+
+.not-active {
+    position: inherit;
+    pointer-events: none;
+    cursor: default;
+    filter:blur(3px);
+    transition-property: -moz-filter, -ms-filter, -o-filter, -webkit-filter, filter;
+    transition-duration: 0.5s;
+   
+  }
+
+.active{
+    position: inherit;
+    pointer-events: auto;
+    filter:blur(0px);
+}
+
+.app-container-css{
+    margin-top: 50px;
+    height: 100%;
+    width: 100%;
+}
+
+.toaster-container{
+    z-index: 9;
+    position: fixed;
+    left: 40%;
+    
+}

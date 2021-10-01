@@ -1,0 +1,25 @@
+.footer-default{
+    position : fixed;
+    bottom : 0;
+    width : 100%;
+    background-color: #171717;
+    height:3rem;
+    clear:both
+    
+}
+
+.footer-default img{
+width: 56px;
+height:56px;
+}
+
+.footer-default a{
+  color: #aeaeae;
+  margin: 0px 0px 10px 10px;
+  font:inherit;
+}
+
+.footer-default ul{
+  padding:20px;
+  display:flex;
+}
