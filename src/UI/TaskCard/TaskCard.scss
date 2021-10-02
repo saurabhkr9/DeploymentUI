@@ -1,0 +1,55 @@
+
+  
+  .taskCardContainer  {
+    position: relative;
+    display: flex;
+    height: 100px;
+    width: 280px;
+    margin-top: 2rem;
+    background: #2c2c2c;
+    overflow: hidden;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 10px 8px #d0d0d0;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: space-between;
+}
+
+  .taskCardContent {
+    position: relative;
+    transform: translatey(-50%);
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    color: rgb(170, 170, 170);
+    font-family: 'Merriweather', serif;
+  }
+
+.taskCardTitle{
+    margin-top: 10px;
+    font-size: large;
+}
+.taskCardOwner{
+    margin-top: 10px;
+    font-size: small;
+}
+.taskCardStatus{
+    margin-top: 10px;
+    font-size: small;
+}
+.taskCardStartDate{
+    margin-top: 30px;
+    font-size: small;
+}
+.taskCardEndDate{
+    margin-top: 20px;
+    font-size: small;
+}
+
+.bx--row.taskCard{
+    margin-top: 70px;
+    margin-left: 20px;
+    font-size: small;
+}

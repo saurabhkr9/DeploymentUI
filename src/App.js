@@ -9,6 +9,7 @@ import { ProtectedRoute } from './assets/ProtectedRoute';
 import PageNotFound from './pages/PageNotFound';
 import HomePage from './pages/Home';
 import Dashboard from './pages/Dashboard'
+import Admin from './pages/Admin'
 import IdleTimeout from './assets/IdleTimeout';
 import {fetchTaskData, sendTaskData } from './redux/actions/taskActions'
 
@@ -41,6 +42,7 @@ let isInitial = true;
                     <Route exact path="/login" component={LoginPage} />  
                     <Route exact path="/home" component={HomePage} />
                     <Route exact path="/dashboard" component={Dashboard} />
+                    <Route exact path="/admin" component={Admin} />
                     <Route exact path="*" component={PageNotFound} />  
                 </Switch>
             </Fade>  

@@ -2,7 +2,7 @@ import {useSelector} from 'react-redux';
 import './Banner.scss';
 
 
-const Banner = () => {  
+const Banner = (props) => {  
 
     const bannerTitle = useSelector(state=> state.ui.bannerTitle);
         return (

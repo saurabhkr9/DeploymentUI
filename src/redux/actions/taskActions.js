@@ -3,7 +3,7 @@ import { ToasterApi } from '../../components/Toaster'
 
 export const fetchTaskData = () => {
     return async (dispatch) => {
-          ToasterApi.info('Fetching data from firebase!')
+          // ToasterApi.info('Fetching data from firebase!')
         const retrieveTaskData = async () => {
             const response = await fetch('https://deploymentui-default-rtdb.firebaseio.com/task.json')
     

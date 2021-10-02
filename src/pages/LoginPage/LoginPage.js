@@ -10,8 +10,8 @@ export default function LoginPage(props) {
 
   const section = {
     about: {
-      title: 'Log in to Do Deployment UI',
-      body: 'This UI has been designed to provide SC&T teams to tag the Clients.It Provides the Client Tag maintenance for all Client Level. Also, Provide capability to have Client Tagging for Preview data.Provide GUI to perform Client Tagging for Preview and all Client Levels viz Global Buying Group, Buying Group, Global Clients or Domestic Clients'
+      title: 'Do Deployment UI',
+      body: 'This UI has been designed to provide Deployment team to keep track on the deployment process. It also provide an Indivisual team member to perform their tasks and update the status as Admin can handle the access of all team member, So the that Admin can track the overall deployment process very easily. This may support multiple client\'s delivary at a time, so we can rid-off the multiple documents and sheets.'
     },
     additional_links: {
       accessHub: 'https://ibm.idaccesshub.com/ECMv6/request/requestHome',

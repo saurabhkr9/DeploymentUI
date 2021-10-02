@@ -1,0 +1,19 @@
+.bx--col.TaskContainer-Col{
+    background-color: #cfcfcf;  
+    margin: inherit;
+    margin-top: 20px; 
+    min-height: 300px;
+    min-width: 300px;
+    padding: 2px 6px 0;
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+    overflow-x: hidden;
+    justify-content: center;
+    border-radius: 3px;
+    box-shadow: 0 0 3px 3px #d0d0d0;
+}
+.bx--col{
+    display: flex;
+    justify-content: center; 
+}

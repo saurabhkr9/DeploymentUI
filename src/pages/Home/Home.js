@@ -11,6 +11,8 @@ export default function HomePage() {
       <div>
       <Banner />
       </div>
+      <aside class="side-nav">
+      </aside>
     <div className="bx--row welcomeContent">
     <WelcomeContent />
     </div>

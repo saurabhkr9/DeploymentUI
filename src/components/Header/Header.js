@@ -1,12 +1,11 @@
 
-import React from "react";
+import React, { useState } from "react";
 import './Header.scss'
 import UserAvatar32 from "@carbon/icons-react/lib/user--avatar/20";
 import Search20 from "@carbon/icons-react/lib/search/20";
 import Notification20 from "@carbon/icons-react/lib/notification/20";
 import AppSwitcher20 from "@carbon/icons-react/lib/app-switcher/20";
 import { IbmCloud32 } from "@carbon/icons-react";
-import { useState } from "react";
 import { SwitcherDivider, SwitcherItem, Switcher,HeaderPanel } from "carbon-components-react";
 import {
     Header,
@@ -15,13 +14,13 @@ import {
     HeaderGlobalBar,
     HeaderNavigation,
     HeaderMenu,
-    HeaderMenuItem
+    HeaderMenuItem,
 } from "carbon-components-react/lib/components/UIShell";
 
 const HeaderNameProps = {
     icon: <IbmCloud32 color="#FFFFFF" />,
     prefix: "IBM",
-    href: "/home",
+    href: "/login",
     title: process.env.REACT_APP_APPLICATION_NAME
 }
 
@@ -33,16 +32,22 @@ const HeaderNavigationProps = {
             title: "Home",
             link: "/home"
         },
+        {
+            title: "Admin",
+            link: "/admin"
+        },
     ]
 }
 
 
 const HeaderNameContainer = () => {
+   
     return (<>
-        {HeaderNameProps.icon}
         <HeaderName href={HeaderNameProps.href} prefix={HeaderNameProps.prefix}>
             [{HeaderNameProps.title}]
-        </HeaderName></>)
+        </HeaderName>
+        </>
+        )
 }
 
 const HeaderNavigationContainer = () => {
