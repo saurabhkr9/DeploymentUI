@@ -85,7 +85,7 @@ export const Admin = () => {
         <div>
             <Banner />
             </div>
-            <div class="bx--row">
+            <div class="bx--row paiCharts">
             <div class="bx--col">
             <PieChart 
         data={data}

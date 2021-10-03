@@ -8,20 +8,16 @@ export default function PageNotFound(props) {
 const jumplinks=[
    
     {
-     title:'Go to Home',
-     url:'/landing'
+     title:'Go to Login',
+     url:'/login'
     },
     {
-      title:'Visit Client Tagging',
-      url:'/landing'
+      title:'Visit Home',
+      url:'/home'
     },
     {
-      title:'Visit Tagging Upload',
-      url:'/landing'
-    },
-    {
-      title:'Visit Tagging Download',
-      url:'/landing'
+      title:'Visit Admin Page',
+      url:'/admin'
     }
 
   ]

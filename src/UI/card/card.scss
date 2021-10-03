@@ -17,18 +17,22 @@
     position: absolute;
     top: 50%;
     transform: translatey(-50%);
-    text-align: justify;
+    display: flex;
+    flex-direction: column; 
     color: black;
     padding: 27px;
     font-family: 'Merriweather', serif;
   }
-  
-  h2 {
-    font-weight: 200;
-    text-align: center;
+
+  .projectCardTitle{
+    font-size: x-large;
   }
-  
-  h3 {
-    font-weight: 100;
+
+  .projectCardOwner{
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
-  
+
+  .projectCardEndDate{
+
+  }

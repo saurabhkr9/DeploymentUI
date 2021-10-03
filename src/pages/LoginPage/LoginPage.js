@@ -4,13 +4,13 @@ import { Link } from 'carbon-components-react';
 import login_banner from './resources/images/login_banner.png'
 import LoginForm from './LoginForm';
 import SignUpForm from './SignUpForm'
-import { ConfirmModal } from '../../components/ModalBox';
+import ConfirmModal  from '../../components/ModalBox';
 export default function LoginPage(props) {
   
 
   const section = {
     about: {
-      title: 'Do Deployment UI',
+      title: 'DO Deployment UI',
       body: 'This UI has been designed to provide Deployment team to keep track on the deployment process. It also provide an Indivisual team member to perform their tasks and update the status as Admin can handle the access of all team member, So the that Admin can track the overall deployment process very easily. This may support multiple client\'s delivary at a time, so we can rid-off the multiple documents and sheets.'
     },
     additional_links: {

@@ -4,10 +4,11 @@ const Card = (props) => {
     return <>
     <div className="cardContainer" onClick={props.onClick} >
              <div className="cardContent">
-                  <h2>{props.title}</h2>
+                  <span className="projectCardTitle">{props.title}</span>
+                  <span className="projectCardOwner">Owner: {props.owner}</span>
+                  <span className="projectCardEndDate">End Date: {props.endDate}</span>
              </div>
        </div>
-       {/* <h3>{props.description}</h3> */}
 </>
 }
 

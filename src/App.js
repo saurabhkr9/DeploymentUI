@@ -11,24 +11,9 @@ import HomePage from './pages/Home';
 import Dashboard from './pages/Dashboard'
 import Admin from './pages/Admin'
 import IdleTimeout from './assets/IdleTimeout';
-import {fetchTaskData, sendTaskData } from './redux/actions/taskActions'
-
-
-let isInitial = true;
 
   const App = (props) => {
 
-    const dispatch = useDispatch();
-    const tasks = useSelector(state => state.task.tasks)
-
-   useEffect(()=>{
-    if(isInitial){
-      dispatch(fetchTaskData());
-      isInitial = false;
-      return;
-    }
-    // dispatch(sendTaskData(tasks));
-  },[tasks, dispatch])
         
         return (
           <div id='app-container' className='app-container-css'>

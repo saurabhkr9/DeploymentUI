@@ -9,7 +9,7 @@ const taskSlice = createSlice({
     reducers:{
         updateTask(state,action){
             state.totalTask  = action.payload.totaltasks;
-            state.tasks = action.payload.tasks
+            state.tasks = action.payload
         },
         addTask(state, action){
             const newTask = action.payload;
@@ -18,7 +18,7 @@ const taskSlice = createSlice({
             if(!existingTask){
                 state.tasks.push({
                     id: newTask.id,
-                    name:newTask.name,
+                    title:newTask.title,
                     startDate:newTask.startDate,
                     endDate:newTask.endDate,
                     description:newTask.description,

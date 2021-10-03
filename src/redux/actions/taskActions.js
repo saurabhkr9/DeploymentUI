@@ -1,14 +1,30 @@
 import { taskAction } from '../reducers/task-slice';
 import { ToasterApi } from '../../components/Toaster'
 
-export const fetchTaskData = () => {
+export const fetchTaskData = (title) => {
+      let url = "";
+      switch (title) {
+        case 'Juniper': 
+           url ='https://deploymentui-default-rtdb.firebaseio.com/projects/-Ml5m5abJ3JWoQjVEDXj/Juniper.json'; 
+           break;
+        case 'OMV':
+           url = "https://deploymentui-default-rtdb.firebaseio.com/projects/-Ml5p7J5Z9E28L-ATY1L/OMV.json";
+           break;
+        case "Adani":
+          url = "https://deploymentui-default-rtdb.firebaseio.com/projects/-Ml5pOhdguap6F8CREHX/Adani.json";
+          break;
+        default: 
+        url="";
+        break;
+      }
+
     return async (dispatch) => {
           // ToasterApi.info('Fetching data from firebase!')
         const retrieveTaskData = async () => {
-            const response = await fetch('https://deploymentui-default-rtdb.firebaseio.com/task.json')
+            const response = await fetch(url)
     
             if(!response.ok){
-              throw new Error('Getting the task data failed.')
+              throw new Error('Getting the tasks data failed.')
             }
             let data = response.json()
             return data;

@@ -17,7 +17,7 @@ export default function ConfirmModal(props) {
           <div className="bx--form__helper-text">{props.modalTitleSecondary}</div>
           </ModalHeader>
           <ModalBody>
-          <div style={{marginTop:'2rem'}}>
+          <div>
               {props.modalBody}
           </div>   
           </ ModalBody>

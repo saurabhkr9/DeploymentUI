@@ -14,7 +14,7 @@ export default function HomePage() {
       <aside class="side-nav">
       </aside>
     <div className="bx--row welcomeContent">
-    <WelcomeContent />
+      <WelcomeContent />
     </div>
   </div>
        
