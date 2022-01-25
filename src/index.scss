@@ -24,3 +24,18 @@ $feature-flags: (
 $feature-flags: (
   grid-columns-16: true,
 );
+
+.toaster-container{
+  z-index: 1;
+  position: fixed;
+  left: 40%; 
+}
+.bx--text-input{
+  background-color: #fff
+}
+.bx--data-table tbody th, .bx--data-table td{
+  background:#fff
+}
+.bx--toolbar-search-container-persistent .bx--search .bx--search-input{
+  background:#fff
+}

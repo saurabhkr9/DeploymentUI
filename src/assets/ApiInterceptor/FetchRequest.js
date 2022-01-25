@@ -1,7 +1,4 @@
 
-import auth from "../ProtectedRoute/auth"
-
-
 const serviceProxyUrl=process.env.REACT_APP_SERVICE_PROXY
 console.log(serviceProxyUrl);
 
@@ -14,7 +11,7 @@ const globalAuthHeaders={
     'Accept': 'application/json',
     'Access-Control-Allow-Origin': '*',
     'Content-Type': 'application/json',
-    'authorization':'Bearer '+auth.getJwt()
+    'authorization':'Bearer '
   }  
 
 

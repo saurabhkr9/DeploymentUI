@@ -1,6 +1,7 @@
 
 import { ToastNotification } from "carbon-components-react"
 import Fade from "../../../assets/Animations/FadeAnimation"
+import moment from "moment"
 import './ToasterNotification.scss'
 export default function ToasterNotification(props) {  
      let title
@@ -22,7 +23,7 @@ export default function ToasterNotification(props) {
       
       <ToastNotification 
         kind={kind}
-        caption="00:00:00 AM"
+        caption={moment().format('MMMM Do YYYY, h:mm:ss a')}
         iconDescription="Close"
         subtitle={<span>{message}</span>}
         title={title}

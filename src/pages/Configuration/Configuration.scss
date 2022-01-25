@@ -1,0 +1,78 @@
+.bx--accordion__item--active .bx--accordion__content{
+    display: flex !important;
+    width: max-content !important;
+    overflow: auto !important;
+}
+.OnBoard-AccordionItem{
+    width: 100%;
+}
+.ProgressIndicator-div{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+.bx--col {
+    display: flex;
+    justify-content: flex-start;
+}
+.details-form{
+    display: flex;
+    flex-wrap: wrap;
+}
+.details-form-row{
+    display: flex;
+    margin-left: auto 1rem;
+    margin-top: 1rem;
+    align-items: baseline;
+    width: 100%;
+}
+.details-form-col{
+    margin-left: 2rem;
+    }
+.tile-container{
+    background-color: white;
+    margin-top: 10%;
+    display: flex;
+    position: absolute;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.bx--tile{
+    display: flex;
+    position: relative;
+    min-width: 12rem;
+    min-height: 17rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    background-color: white;
+}
+.bx--modal-content{
+    margin-top:-1rem;
+}
+.configuration-page{
+    background-color: white;
+    margin: 6rem;
+}
+.info-container{
+    margin:1rem;
+    display: block;
+    border-right: 3px solid #d5d5d5;
+    min-height: 38rem;
+}
+.config-title{
+    font-size: 2rem;
+}
+.config-para{
+margin-top: 2rem;
+font-size: 1rem;
+}
+.config-links{
+    font-size:1rem;
+    text-decoration: none !important;
+    color: black !important;
+    padding: 0.1rem;
+}
+.config-tile{
+    display: block;
+    align-content: center;
+}

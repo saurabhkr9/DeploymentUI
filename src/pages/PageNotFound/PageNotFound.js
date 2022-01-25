@@ -10,14 +10,6 @@ const jumplinks=[
     {
      title:'Go to Login',
      url:'/login'
-    },
-    {
-      title:'Visit Home',
-      url:'/home'
-    },
-    {
-      title:'Visit Admin Page',
-      url:'/admin'
     }
 
   ]

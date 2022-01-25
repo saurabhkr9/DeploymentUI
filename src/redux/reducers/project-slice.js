@@ -3,35 +3,73 @@ import { createSlice } from '@reduxjs/toolkit';
 const projectSlice = createSlice({
     name: 'project',
     initialState:{
-        totalProjects: 0,
-        projects:[]
+        itsmTools:[],
+        Clients:[],
+        NotificationChannels:[],
+        ProjectModules:[],
+        toolMaster:[],
+        Users:[],
+        Menus:[],
+        Profiles:[],
+        Roles:[],
     },
     reducers:{
-        updateProject(state,action){
-            state.totalProjects  = action.payload.totalProjects;
-            state.projects = action.payload.projects
+        updateITSMTools(state,action){
+            state.itsmTools = action.payload;
         },
-        addProject(state, action){
-            const newProject = action.payload;
-            const existingProject = state.items.find(item => item.id === newProject.id);
-            state.totalProjects++;
-            if(!existingProject){
-                state.projects.push({
-                    id: newProject.id,
-                    title:newProject.title,
-                    startDate:newProject.startDate,
-                    endDate:newProject.endDate,
-                    owner:newProject.owner,
-                })
-            }
+        updateClients(state,action){
+            state.Clients = action.payload;
         },
-        removeProject(state, action){
-            const idToRemove = action.payload;
-            const existingProject = state.projects.find(item => item.id === idToRemove);
-            if(existingProject) {
-                state.projects = state.projects.filter(item => item.id !== idToRemove);
-                state.totalProjects--;
-            }
+        updateNotificationChannel(state,action){
+            state.NotificationChannels = action.payload;
+        },
+        updateProjectModules(state,action){
+            state.ProjectModules = action.payload;
+        },
+        updateToolMaster(state,action){
+            state.toolMaster = action.payload;
+        },
+        updateUsers(state,action){
+            state.Users = action.payload;
+        },
+        updateMenus(state,action){
+            state.Menus = action.payload;
+        },
+        updateProfiles(state,action){
+            state.Profiles = action.payload;
+        },
+        updateRoles(state,action){
+            state.Roles = action.payload;
+        },
+
+
+
+        addNewTool(state,action){
+            state.itsmTools.push(action.payload);
+        },
+        addNewClient(state,action){
+            state.Clients.push(action.payload);
+        },
+        addNewNotificationChannel(state,action){
+            state.NotificationChannels.push(action.payload);
+        },
+        addNewProjectModule(state,action){
+            state.ProjectModules.push(action.payload);
+        },
+        addNewToolMaster(state,action){
+            state.toolMaster.push(action.payload);
+        },
+        addNewUser(state,action){
+            state.Users.push(action.payload);
+        },
+        addNewMenu(state,action){
+            state.Menus.push(action.payload);
+        },
+        addNewProfile(state,action){
+            state.Profiles.push(action.payload);
+        },
+        addNewRole(state,action){
+            state.Roles.push(action.payload);
         }
     }
 })

@@ -1,33 +1,30 @@
-import React,{ useEffect} from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
 import LoginPage from './pages/LoginPage';
-import {Toaster} from './components/Toaster'
 import './App.scss';
 import {Route, Switch} from 'react-router-dom'
 import Fade from './assets/Animations/FadeAnimation';
 import { ProtectedRoute } from './assets/ProtectedRoute';
 import PageNotFound from './pages/PageNotFound';
 import HomePage from './pages/Home';
-import Dashboard from './pages/Dashboard'
-import Admin from './pages/Admin'
+import Dashboard from './pages/Dashboard';
+import Admin from './pages/Admin';
+import Configuration from './pages/Configuration';
 import IdleTimeout from './assets/IdleTimeout';
 
   const App = (props) => {
 
-        
         return (
           <div id='app-container' className='app-container-css'>
-          <div className="toaster-container">
-                 <Toaster />
-          </div>
-          <IdleTimeout timeout={process.env.REACT_APP_IDLE_TIMEOUT} onTimeoutRedirect="/logout">
+         
+          <IdleTimeout timeout={process.env.REACT_APP_IDLE_TIMEOUT} onTimeoutRedirect="/login">
           <div id="app-root" className="active">
             <Fade show={true}>
                 <Switch basename={props.basename}>
                     <Route exact path="/login" component={LoginPage} />  
-                    <Route exact path="/home" component={HomePage} />
+                    <ProtectedRoute exact path="/home" component={HomePage} />
                     <Route exact path="/dashboard" component={Dashboard} />
-                    <Route exact path="/admin" component={Admin} />
+                    <ProtectedRoute path="/admin" component={Admin} />
+                    <ProtectedRoute path="/config" component={Configuration} />
                     <Route exact path="*" component={PageNotFound} />  
                 </Switch>
             </Fade>  

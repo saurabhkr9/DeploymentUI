@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
+import { ToasterApi } from "../../components/Toaster";
 import auth from "./auth";
 export const ProtectedRoute = ({
   component: Component,
@@ -14,6 +15,7 @@ export const ProtectedRoute = ({
             return <Component {...props} />;
           }
         } else {
+          ToasterApi.alert('User is not logged in!')
           return (
             <Redirect
               to={{

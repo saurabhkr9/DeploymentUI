@@ -1,13 +1,18 @@
 
 import SecureStore from "../../SecureStore";
 import { useEffect } from "react";
+import { useHistory } from "react-router";
+import { useDispatch } from 'react-redux'
 import { ToasterApi } from "../../components/Toaster";
 import { Auth } from "../ProtectedRoute";
+import {uiAction} from "../../redux/reducers/ui-slice"
 
 const lastActiveTimestampKey='lastActiveTimestamp'
 
 
 const IdleTimeout=({timeout,onTimeoutRedirect,children})=>{
+    let history=useHistory()
+    let dispatch = useDispatch();
 useEffect(() => {
     let idleTimer=()=>{
         let lastActiveLog;
@@ -23,7 +28,9 @@ useEffect(() => {
             if("/"+window.location.href.substring(window.location.href.lastIndexOf('/') + 1)  !== onTimeoutRedirect){
                 ToasterApi.warn("Logging off due to Inactivity!")
                 setTimeout(function() {
-                    Auth.logout(()=>{window.location.href = onTimeoutRedirect});
+                    Auth.logout();
+                    history.push(onTimeoutRedirect);
+                    dispatch(uiAction.setIsAuthenticated(false));
                 }, 2500);
             }
         }

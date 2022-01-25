@@ -1,3 +1,4 @@
 import { HttpStatus } from "./HttpStatus";
+import { APIs } from "./APIs";
 
-export {HttpStatus}
+export {HttpStatus, APIs}

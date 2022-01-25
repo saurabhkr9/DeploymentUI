@@ -30,7 +30,8 @@ export default function LoginPage(props) {
   }
 
   
-  const [accessHubModal,showAccessHubModal]=useState(false)
+  // const [accessHubModal,showAccessHubModal]=useState(false)
+  
 
   return (
 
@@ -38,16 +39,16 @@ export default function LoginPage(props) {
       <div className="banner-container"><img className="banner-css" alt="login float banner" src={login_banner} /></div>
       <div className="login-form-container">
             <LoginForm />
-        <div className="signup-user-div">
+        {/* <div className="signup-user-div">
           <Link href="" onClick={(e)=>{showAccessHubModal(true);e.preventDefault()}}>Need Access? Request Here</Link>
           <ConfirmModal open={accessHubModal} setOpen={showAccessHubModal} {...section.accessHubModal} />
-        </div >
+        </div > */}
       </div >
       <div className="about-container">
         <span className="about-header">
           {section.about.title}
         </span>
-        <hr style={{ width: '95%', justifyContent: 'center' }} />
+        <hr style={{ width: '95%', justifyContent: 'center'}} />
         <span className="about-content">
           {section.about.body}
         </span>

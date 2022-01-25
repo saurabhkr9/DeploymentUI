@@ -2,10 +2,13 @@ import './Admin.scss';
 import { useDispatch } from 'react-redux';
 import { PieChart } from "@carbon/charts-react";
 import "@carbon/charts/styles.css";
-
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router';
 import Banner from '../../components/Banner';
 import {uiAction} from '../../redux/reducers/ui-slice'
 import { useEffect } from 'react';
+import ManageUser from './Users/ManageUser';
+import AccessControl from './AccessControl';
 
 const data = [
 	{
@@ -74,17 +77,19 @@ const options2 = {
 };
 
 export const Admin = () => {
-    const dispatch = useDispatch();
+	  const { path } = useRouteMatch();
 
-    useEffect(()=>{
-        dispatch(uiAction.changeTitle("Welcome Admin!"));
-      },[ dispatch])
+	  let location = useLocation();
+	//   let dispatch = useDispatch();
 
+
+
+	  
     return (
         <div className="bx--grid bx--grid--full-width">
-        <div>
-            <Banner />
-            </div>
+       
+		
+		{location.pathname === '/admin' && 
             <div class="bx--row paiCharts">
             <div class="bx--col">
             <PieChart 
@@ -98,8 +103,23 @@ export const Admin = () => {
         options={options2}
         />
             </div>
-            </div>
+            </div>}
             
+
+	<div className="bx--grid">
+       <div className="bx--row">
+       <Switch>
+        <Route exact path={`${path}/users`}>
+          <ManageUser />
+        </Route>
+		<Route exact path={`${path}/access-control`}>
+          <AccessControl />
+        </Route>
+      </Switch>
+       
+       </div>
+    </div>
+
      </div>
     )
 }

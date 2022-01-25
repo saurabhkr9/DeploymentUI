@@ -9,14 +9,14 @@ export default function ConfirmModal(props) {
   return (<div >
     
         {open?
-          <ComposedModal onClose={()=>setOpen(false)} size='md' open={open}>
+          <ComposedModal preventCloseOnClickOutside hasForm onClose={()=>setOpen(false)} size={props.size? props.size:"md"}  open={open}>
           <ModalHeader>
           <span className="modal-header-primary">
                {props.modalTitlePrimary} 
           </span>
           <div className="bx--form__helper-text">{props.modalTitleSecondary}</div>
           </ModalHeader>
-          <ModalBody>
+          <ModalBody hasForm>
           <div>
               {props.modalBody}
           </div>   

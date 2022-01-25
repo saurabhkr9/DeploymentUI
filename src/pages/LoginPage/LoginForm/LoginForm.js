@@ -1,26 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './LoginForm.scss'
-import { Form, Button, TextInput, Checkbox, Link,Loading } from 'carbon-components-react';
+import { useDispatch } from 'react-redux';
+import { Form, Button, TextInput, Link,Loading } from 'carbon-components-react';
 import { ArrowRight32 } from '@carbon/icons-react';
 import { useHistory } from 'react-router';
 import { FetchRequest } from '../../../assets/ApiInterceptor';
 import { HttpStatus } from '../../../utils';
 import { ToasterApi } from '../../../components/Toaster';
 import { Auth } from '../../../assets/ProtectedRoute';
+import { uiAction } from '../../../redux/reducers/ui-slice'
 
 export default function LoginPage() {
 let history=useHistory()
-
+let dispatch = useDispatch();
 const form={
          links:{
              forgot_id:"https://www.ibm.com/ibmid/myibm/help/us/helpdesk.html",
              forgot_password:"https://w3.ibm.com/profile/update/password/en-us/index.html",
-             loginSuccess:"/landing"
+             loginSuccess:"/home"
          },
          regex:{
-             username:"([a-zA-Z0-9_.-]+)@([a-zA-Z]+)([.])([a-zA-Z]+)",
-            password:"(.*).{9,}"
-
+            username:"([a-zA-Z0-9_.-]+)@([a-zA-Z]+)([.])([a-zA-Z]+)",
+            password:"(.*).{8,}"
          }
     }
 
@@ -29,12 +30,8 @@ const [isValidUsername,setValidUsername]=useState(true)
 const [isLoading,setLoading]=useState(false) 
 const [username,setUserName]=useState()
 const [password,setPassword]=useState()
-const [isRememberChecked,setRememberCheck]=useState(false)
 
 
-const rememberMeOnChange=(e)=>{
-    setRememberCheck(!isRememberChecked)
-}
 
 const onUsernameChange=(e)=>{
    setUserName(e.target.value) 
@@ -47,27 +44,35 @@ const onPasswordChange=(e)=>{
 }
 
 const formActionSubmit=(e)=>{
-
+ 
     
 if(isValidUsername && isValidPassword){
      setLoading(true)
      FetchRequest.Post('/accounts:signInWithPassword?key='+process.env.REACT_APP_FIREBASE_WEB_API_KEY,{email:username,password:password,returnSecureToken:true})
     .then(response=>({body:response.text(),status:response.status}))
-    .then(response=>{
+    .then(response=>{console.log(response);
       if(response.status===HttpStatus.OK.status){
-          ToasterApi.success('Successfully Authenticated User')
-        //   response.body.then(jwt=>{Auth.login(()=>{history.push("/home")},jwt);})
-        response.body.then(history.push("/home"))
+          response.body.then(body=>{Auth.login(()=>history.push('/home'),body.idToken);
+          dispatch(uiAction.setIsAuthenticated(true));
+        })
+          ToasterApi.success('Successfully Authenticated')
       }
       else{
-         response.body.then(message=>{ToasterApi.error(message)})
+         response.body.then(error=>{ToasterApi.error(error.message)})
       }
       setLoading(false)
     })
-    .catch((e)=>{ToasterApi.error(String(e));setLoading(false);})
+    .catch((e)=>{ToasterApi.error(e.message);setLoading(false);})
     
    }
 }
+
+useEffect(() => {
+    if(Auth.isAuthenticated()) {
+      ToasterApi.success('User is already Authenticated!')
+      history.push('/home');
+    }
+  },[history])
 
     return (
         <div id="login-form-div">
@@ -88,7 +93,6 @@ if(isValidUsername && isValidPassword){
                 invalid={!isValidUsername}
                 invalidText={"Username entered is not valid"}
             />
-            <div className="forgot-items"><Link size='sm' target="blank" href={form.links.forgot_id}>Forgot ID?</Link></div>
             </div>
             <div className="form-element-container">
             <TextInput.PasswordInput
@@ -105,11 +109,6 @@ if(isValidUsername && isValidPassword){
                 invalidText={"Password Entered is in Incorrect format"}
             />
             <div className="forgot-items"><Link size='sm' target="blank" href={form.links.forgot_password}>Forgot Password?</Link></div>
-            </div>
-            <div className="form-element-container">
-            <fieldset className="bx--fieldset">
-                  <Checkbox onClick={rememberMeOnChange} onSelect={rememberMeOnChange} defaultChecked={isRememberChecked} labelText="Remember Me" id="remember" />
-            </fieldset>
             </div>
             <div className="form-element-container">
                 <span style={{pointerEvents:isLoading?'none':'all'}}><Button renderIcon={isLoading?null:ArrowRight32} kind="primary" tabIndex={0} type="submit" >

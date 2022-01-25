@@ -1,7 +1,4 @@
  import ToasterNotification from './ToasterNotification';
-
-
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ToasterApi } from './ToasterApi';
@@ -63,11 +60,15 @@ class Toaster extends React.Component {
   }
 
   render() {
+      let marginTop = 0;
+      if(window.location.pathname === "/login"){
+        marginTop = "15%"
+      }
       const { toasts } = this.state;
       if (!toasts.length) return null;
       return (
          
-          <div >
+          <div style={{ marginTop: marginTop}} >
               {toasts.map((toast, index) =>
                   <div key={index}>
                       <ToasterNotification  toast={toast} />

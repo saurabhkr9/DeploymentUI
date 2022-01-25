@@ -7,16 +7,19 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Header from './components/Header';
+import {Toaster} from './components/Toaster'
 
-const appContext=process.env.REACT_APP_CONTEXT_URL
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-    <Header />
-  
-  <BrowserRouter basename={appContext}>
-            <App basename={appContext}/>
+    <div className="toaster-container">
+          <Toaster />
+    </div>
+   
+  <BrowserRouter basename="">
+            <Header />
+            <App basename=""/>
   </BrowserRouter>
   </Provider>
   </React.StrictMode>,
