@@ -50,7 +50,7 @@ if(isValidUsername && isValidPassword){
      setLoading(true)
      FetchRequest.Post('/accounts:signInWithPassword?key='+process.env.REACT_APP_FIREBASE_WEB_API_KEY,{email:username,password:password,returnSecureToken:true})
     .then(response=>({body:response.text(),status:response.status}))
-    .then(response=>{console.log(response);
+    .then(response=>{
       if(response.status===HttpStatus.OK.status){
           response.body.then(body=>{Auth.login(()=>history.push('/home'),body.idToken);
           dispatch(uiAction.setIsAuthenticated(true));
@@ -58,12 +58,16 @@ if(isValidUsername && isValidPassword){
           ToasterApi.success('Successfully Authenticated')
       }
       else{
-         response.body.then(error=>{ToasterApi.error(error.message)})
+         response.body.then(error=>{
+             ToasterApi.info(error.message)
+            })
       }
       setLoading(false)
     })
-    .catch((e)=>{ToasterApi.error(e.message);setLoading(false);})
-    
+    .catch((e)=>{
+        console.log(e);
+        ToasterApi.error(e.message);setLoading(false);
+    })
    }
 }
 

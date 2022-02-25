@@ -22,7 +22,7 @@ const AccessControl = (props) => {
         <div className="bx--grid bx--grid--full-width">
             <div className="bx--row access-control-page">
                 <div className="bx--col info-container">
-                    <sapn className="access-control-title">Access Control</sapn>
+                    <span className="access-control-title">Access Control</span>
                     <p className="access-control-para">
                      Here goes the discription of this page.
                     </p>

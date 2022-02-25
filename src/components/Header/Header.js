@@ -92,6 +92,9 @@ const SideNavRail = (props) => {
           <SideNavLink renderIcon={Fade16} onClick={(e)=>{history.push("/analytics");e.preventDefault();}} href="">
             Analytics
           </SideNavLink>
+          <SideNavLink renderIcon={Fade16} onClick={(e)=>{history.push("/dataQualityCheck");e.preventDefault();}} href="">
+          Data Quality Check
+          </SideNavLink>
           <SideNavLink renderIcon={Fade16} onClick={(e)=>{history.push("/reports");e.preventDefault();}} href="">
             Reports
           </SideNavLink>

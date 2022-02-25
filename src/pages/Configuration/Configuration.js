@@ -40,59 +40,52 @@ const Configuration = (props) => {
 
     return (
     <div className="bx--grid bx--grid--full-width">
-      {/* <div>
-      <Banner />
-      </div> */}
-
-      {/* <div className="ProgressIndicator-div">
-        <ProgressIndicator />
-      </div> */}
       {
-      location.pathname === '/config' &&
-      <div className="bx--row configuration-page">
-      <div className="bx--col info-container">
-      <sapn className="config-title">Configuration Items</sapn>
-      <p className="config-para">
-        Here goes the discription of this page.
-      </p>
-      </div>
-      {/* <div className="bx--col">
-        <vr />
-      </div> */}
-      <div className="bx--col config-tile">
-      <Tile>
-      <Link className="config-links"
-      onClick={(e)=>{history.push(`${path}/itsmTools`);e.preventDefault()}}
-      href=""><CalendarTools20 />  &nbsp; &nbsp; ITSM Tools</Link> 
-      <br />
-      <Link className="config-links"
-      onClick={(e)=>{history.push(`${path}/do-notification-channels`);e.preventDefault()}}
-      href="" ><NotificationFilled20 />  &nbsp; &nbsp; DO Notification Channels</Link>
-      <br />
-      <Link className="config-links"
-      onClick={(e)=>{history.push(`${path}/project-modules`);e.preventDefault()}}
-      href="" ><Product20 />  &nbsp; &nbsp; Project Modules</Link>
-      <br />
-      <Link className="config-links"
-      onClick={(e)=>{history.push(`${path}/tool-master`);e.preventDefault()}}
-      href="" ><Tools20 />  &nbsp; &nbsp; Tool Master</Link>
-      </Tile>
-      </div>
-      <div className="bx--col config-tile">
-      <Tile>
-      <Link className="config-links"
-      onClick={(e)=>{history.push(`${path}/menu`);e.preventDefault()}}
-      href="" ><TableOfContents20 />  &nbsp; &nbsp; Menu</Link>
-      <br />
-      <Link className="config-links"
-      onClick={(e)=>{history.push(`${path}/profiles`);e.preventDefault()}}
-      href="" ><UserActivity20 />  &nbsp; &nbsp; Profiles</Link>
-      <br />
-      <Link className="config-links"
-      onClick={(e)=>{history.push(`${path}/roles`);e.preventDefault()}}
-      href=""
-      ><UserRole20 />  &nbsp; &nbsp; Roles </Link>
-      </Tile>
+       location.pathname === '/config' &&
+        <div className="bx--row configuration-page">
+          <div className="bx--col info-container">
+            <span className="config-title">Configuration Items</span>
+            <p className="config-para">
+              Here goes the discription of this page.
+            </p>
+          </div>
+
+          <div className="bx--col config-tile">
+            <Tile>
+              <Link className="config-links"
+                onClick={(e)=>{history.push(`${path}/itsmTools`);e.preventDefault()}}
+                href=""><CalendarTools20 />  &nbsp; &nbsp; 
+             ITSM Tools
+              </Link> 
+             <br />
+             <Link className="config-links"
+             onClick={(e)=>{history.push(`${path}/do-notification-channels`);e.preventDefault()}}
+             href="" ><NotificationFilled20 />  &nbsp; &nbsp; DO Notification Channels</Link>
+             <br />
+             <Link className="config-links"
+             onClick={(e)=>{history.push(`${path}/project-modules`);e.preventDefault()}}
+             href="" ><Product20 />  &nbsp; &nbsp; Project Modules</Link>
+             <br />
+             <Link className="config-links"
+             onClick={(e)=>{history.push(`${path}/tool-master`);e.preventDefault()}}
+              href="" ><Tools20 />  &nbsp; &nbsp; Tool Master</Link>
+            </Tile>
+             </div>
+             <div className="bx--col config-tile">
+            <Tile>
+             <Link className="config-links"
+             onClick={(e)=>{history.push(`${path}/menu`);e.preventDefault()}}
+             href="" ><TableOfContents20 />  &nbsp; &nbsp; Menu</Link>
+             <br />
+             <Link className="config-links"
+             onClick={(e)=>{history.push(`${path}/profiles`);e.preventDefault()}}
+             href="" ><UserActivity20 />  &nbsp; &nbsp; Profiles</Link>
+             <br />
+             <Link className="config-links"
+             onClick={(e)=>{history.push(`${path}/roles`);e.preventDefault()}}
+             href=""
+                    ><UserRole20 />  &nbsp; &nbsp; Roles </Link>
+            </Tile>
       </div>
       </div>
       

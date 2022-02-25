@@ -9,6 +9,8 @@ import HomePage from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Admin from './pages/Admin';
 import Configuration from './pages/Configuration';
+import DataQualityCheck from './pages/DataQualityCheck';
+import OnBoarding from './pages/OnBoarding'
 import IdleTimeout from './assets/IdleTimeout';
 
   const App = (props) => {
@@ -22,9 +24,11 @@ import IdleTimeout from './assets/IdleTimeout';
                 <Switch basename={props.basename}>
                     <Route exact path="/login" component={LoginPage} />  
                     <ProtectedRoute exact path="/home" component={HomePage} />
-                    <Route exact path="/dashboard" component={Dashboard} />
-                    <ProtectedRoute path="/admin" component={Admin} />
                     <ProtectedRoute path="/config" component={Configuration} />
+                    <ProtectedRoute path="/onBoarding" component={OnBoarding} />
+                    <ProtectedRoute path="/dataQualityCheck" component={DataQualityCheck} />
+                    <ProtectedRoute exact path="/dashboard" component={Dashboard} />
+                    <ProtectedRoute path="/admin" component={Admin} />
                     <Route exact path="*" component={PageNotFound} />  
                 </Switch>
             </Fade>  
